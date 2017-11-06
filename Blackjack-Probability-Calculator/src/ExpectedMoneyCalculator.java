@@ -378,7 +378,7 @@ public class ExpectedMoneyCalculator implements ExpectedMoneyCalculatorInterface
 
       if (next.getHandValue() > 21) { // hitting on a busted hand...
         next.setMoneyMadeIfHitting(-1); // lose your money.
-      } else if(rules.allowedToHit(next)){
+      } else{
         double avgMoney = 0;
         for (int i = 0; i < 13; i++) {
           // there is not really a difference for face cards, but to keep the
@@ -442,7 +442,7 @@ public class ExpectedMoneyCalculator implements ExpectedMoneyCalculatorInterface
       }
     }
   }
-
+  
   @Override
   public String getBestMove(MinimalHand toFind) {
     if (toFind.totalNumCards() <= 2) {
